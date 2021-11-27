@@ -1,7 +1,18 @@
-<h1>
-	팩 리스트
-</h1>
-<% @packs.each do |pack| %>
-  <%= pack.product_name %>
-  <hr>
-<% end %>
+<div class="container">
+	<div class="row">
+		<% @packs.each do |pack| %>
+		<div class="col-4">
+			<div class="card" style="width: 18rem;">
+				<img src="..." class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title"><%= pack.product_name %></h5>
+					<p class="card-text">
+						<%= pack.desc %>
+					</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

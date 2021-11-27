@@ -1701,3 +1701,592 @@ Processing by Admin::DashboardController#index as HTML
 Completed 200 OK in 260ms (Views: 234.8ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:18:56 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 17:18:57 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (6.1ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:4
+  Rendered packs/index.html.erb within layouts/application (52.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 197ms (Views: 176.3ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/admin" for 172.17.0.1 at 2021-11-27 17:19:01 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (123.9ms)
+Completed 200 OK in 129ms (Views: 126.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/admin_users" for 172.17.0.1 at 2021-11-27 17:19:02 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "admin_users" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (214.8ms)
+Completed 200 OK in 320ms (Views: 222.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin/packs" for 172.17.0.1 at 2021-11-27 17:19:02 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::PacksController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "packs" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "packs" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "packs"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 AS one FROM "packs" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mPack Load (78.6ms)[0m  [1m[34mSELECT  "packs".* FROM "packs" ORDER BY "packs"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Pack"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/packs.rb:8
+  [1m[36mActiveStorage::Attachment Load (3.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Pack"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/packs.rb:8
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/packs.rb:8
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs"[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (698.9ms)
+Completed 200 OK in 745ms (Views: 629.8ms | ActiveRecord: 91.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d08e72e694fa13ea4407a080336ced20fc3a000e/KakaoTalk_20210603_153518680_01.jpg" for 172.17.0.1 at 2021-11-27 17:19:03 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d08e72e694fa13ea4407a080336ced20fc3a000e", "filename"=>"KakaoTalk_20210603_153518680_01"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.5ms) [0m[34mGenerated URL for file at key: 1wSbMSk3kzKSgasDfVKp2TTJ (http://ksi2564.run.goorm.io/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNWGRUWWsxVGF6TnJla3RUWjJGelJHWldTM0F5VkZSS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd05qQXpYekUxTXpVeE9EWTRNRjh3TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMHRoYTJGdlZHRnNhMTh5TURJeE1EWXdNMTh4TlRNMU1UZzJPREJmTURFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUT0iLCJleHAiOiIyMDIxLTExLTI3VDE3OjI0OjAzLjc2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6879f81496ff862ee1af29d8794a1aec9b82a03c/KakaoTalk_20210603_153518680_01.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210603_153518680_01.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210603_153518680_01.jpg)[0m
+Redirected to http://ksi2564.run.goorm.io/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNWGRUWWsxVGF6TnJla3RUWjJGelJHWldTM0F5VkZSS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd05qQXpYekUxTXpVeE9EWTRNRjh3TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMHRoYTJGdlZHRnNhMTh5TURJeE1EWXdNMTh4TlRNMU1UZzJPREJmTURFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUT0iLCJleHAiOiIyMDIxLTExLTI3VDE3OjI0OjAzLjc2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6879f81496ff862ee1af29d8794a1aec9b82a03c/KakaoTalk_20210603_153518680_01.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210603_153518680_01.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210603_153518680_01.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNWGRUWWsxVGF6TnJla3RUWjJGelJHWldTM0F5VkZSS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd05qQXpYekUxTXpVeE9EWTRNRjh3TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMHRoYTJGdlZHRnNhMTh5TURJeE1EWXdNMTh4TlRNMU1UZzJPREJmTURFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUT0iLCJleHAiOiIyMDIxLTExLTI3VDE3OjI0OjAzLjc2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6879f81496ff862ee1af29d8794a1aec9b82a03c/KakaoTalk_20210603_153518680_01.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210603_153518680_01.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210603_153518680_01.jpg" for 172.17.0.1 at 2021-11-27 17:19:03 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"KakaoTalk_20210603_153518680_01.jpg\"; filename*=UTF-8''KakaoTalk_20210603_153518680_01.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNWGRUWWsxVGF6TnJla3RUWjJGelJHWldTM0F5VkZSS0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd05qQXpYekUxTXpVeE9EWTRNRjh3TVM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMHRoYTJGdlZHRnNhMTh5TURJeE1EWXdNMTh4TlRNMU1UZzJPREJmTURFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUT0iLCJleHAiOiIyMDIxLTExLTI3VDE3OjI0OjAzLjc2NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6879f81496ff862ee1af29d8794a1aec9b82a03c", "filename"=>"KakaoTalk_20210603_153518680_01"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <main> at /workspace/opensource-project/app/models/application_record.rb:1)
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:39:40 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35799ms (Views: 35794.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 17:40:55 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.3ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:4
+  Rendered packs/index.html.erb within layouts/application (25.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 119.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:47:41 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 121ms (Views: 118.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:48:36 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 144ms (Views: 142.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:50:41 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 140.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:52:31 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 142.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:52:45 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 168.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:53:02 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 101.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:53:18 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 161.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:54:43 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:55:32 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 17:57:27 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 156ms (Views: 154.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 18:01:52 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 172.17.0.1 at 2021-11-27 18:01:54 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 305ms (Views: 284.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:02:47 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.3ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:4
+  Rendered packs/index.html.erb within layouts/application (5.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:03:39 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (6.1ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:4
+  Rendered packs/index.html.erb within layouts/application (26.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 217ms (Views: 138.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:50 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (1.5ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (8.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 181.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:53 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (19.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 204ms (Views: 201.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:54 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (4.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 197ms (Views: 193.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:54 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (8.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 424ms (Views: 422.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:56 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.1ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (7.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 153.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:05:57 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:10
+  Rendered packs/index.html.erb within layouts/application (8.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 342ms (Views: 340.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:06:32 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:8
+  Rendered packs/index.html.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 193ms (Views: 191.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:10:09 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:3
+  Rendered packs/index.html.erb within layouts/application (4.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 105.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/packs/new" for 172.17.0.1 at 2021-11-27 18:10:19 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::PacksController#new as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (1987.9ms)
+Completed 200 OK in 2190ms (Views: 2054.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/admin/packs" for 172.17.0.1 at 2021-11-27 18:10:52 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::PacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ETpP8Px5aaQdSXE8HieUTtb1vuwiSS1mmXy9T2SbA2K8dK4AkSOLPzwSDroLaXQB5HCTKynKssHDwc02Br4cig==", "pack"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x0000556b55e9c008 @tempfile=#<Tempfile:/tmp/RackMultipart20211127-3415-18pnbt6.jpg>, @original_filename="KakaoTalk_20210131_222352401.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"pack[image]\"; filename=\"KakaoTalk_20210131_222352401.jpg\"\r\nContent-Type: image/jpeg\r\n">, "product_name"=>"증명사진", "company_name"=>"김성인", "desc"=>"김성인의 증명사진"}, "commit"=>"Create 마스크 팩"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (3.2ms) [0m[32mUploaded file to key: sjo2ZmGEuPTPJrHuUjvCZrbW (checksum: MCt4SdJG2tyMf426qwrb/w==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Create (5.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "sjo2ZmGEuPTPJrHuUjvCZrbW"], ["filename", "KakaoTalk_20210131_222352401.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 102610], ["checksum", "MCt4SdJG2tyMf426qwrb/w=="], ["created_at", "2021-11-27 18:10:52.664590"]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (20.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mPack Create (0.3ms)[0m  [1m[32mINSERT INTO "packs" ("product_name", "company_name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_name", "증명사진"], ["company_name", "김성인"], ["desc", "김성인의 증명사진"], ["created_at", "2021-11-27 18:10:52.710820"], ["updated_at", "2021-11-27 18:10:52.710820"]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "image"], ["record_type", "Pack"], ["record_id", 3], ["blob_id", 2], ["created_at", "2021-11-27 18:10:52.758333"]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mPack Update (0.1ms)[0m  [1m[33mUPDATE "packs" SET "updated_at" = ? WHERE "packs"."id" = ?[0m  [["updated_at", "2021-11-27 18:10:52.762001"], ["id", 3]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a95e38b6-791a-4d4e-85a7-0e298c158e4c) to Async(default) with arguments: #<GlobalID:0x0000556b57a790c8 @uri=#<URI::GID gid://goorm-rails-app/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://ksi2564.run.goorm.io/admin/packs/3
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 298ms (ActiveRecord: 46.4ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c] Performing ActiveStorage::AnalyzeJob (Job ID: a95e38b6-791a-4d4e-85a7-0e298c158e4c) from Async(default) with arguments: #<GlobalID:0x0000556b5753ef90 @uri=#<URI::GID gid://goorm-rails-app/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: sjo2ZmGEuPTPJrHuUjvCZrbW[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/admin/packs/3" for 172.17.0.1 at 2021-11-27 18:10:52 +0000
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::PacksController#show as HTML
+  Parameters: {"id"=>"3"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   [1m[35m (18.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c]   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a95e38b6-791a-4d4e-85a7-0e298c158e4c] Performed ActiveStorage::AnalyzeJob (Job ID: a95e38b6-791a-4d4e-85a7-0e298c158e4c) from Async(default) in 108.34ms
+  [1m[36mPack Load (0.4ms)[0m  [1m[34mSELECT  "packs".* FROM "packs" WHERE "packs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Pack"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/admin/packs.rb:38
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/packs.rb:38
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (173.8ms)
+Completed 200 OK in 210ms (Views: 181.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d5f13cefa46af020d7a2a6122085260c35ebab3d/KakaoTalk_20210131_222352401.jpg" for 172.17.0.1 at 2021-11-27 18:10:53 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d5f13cefa46af020d7a2a6122085260c35ebab3d", "filename"=>"KakaoTalk_20210131_222352401"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: sjo2ZmGEuPTPJrHuUjvCZrbW (http://ksi2564.run.goorm.io/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMnB2TWxwdFIwVjFVRlJRU25KSWRWVnFka05hY21KWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd01UTXhYekl5TWpNMU1qUXdNUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowdGhhMkZ2VkdGc2ExOHlNREl4TURFek1WOHlNakl6TlRJME1ERXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0xMS0yN1QxODoxNTo1My40MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--6a0460c877c12affd393cfea410f23169a453fce/KakaoTalk_20210131_222352401.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210131_222352401.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210131_222352401.jpg)[0m
+Redirected to http://ksi2564.run.goorm.io/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMnB2TWxwdFIwVjFVRlJRU25KSWRWVnFka05hY21KWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd01UTXhYekl5TWpNMU1qUXdNUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowdGhhMkZ2VkdGc2ExOHlNREl4TURFek1WOHlNakl6TlRJME1ERXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0xMS0yN1QxODoxNTo1My40MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--6a0460c877c12affd393cfea410f23169a453fce/KakaoTalk_20210131_222352401.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210131_222352401.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210131_222352401.jpg
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMnB2TWxwdFIwVjFVRlJRU25KSWRWVnFka05hY21KWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd01UTXhYekl5TWpNMU1qUXdNUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowdGhhMkZ2VkdGc2ExOHlNREl4TURFek1WOHlNakl6TlRJME1ERXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0xMS0yN1QxODoxNTo1My40MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--6a0460c877c12affd393cfea410f23169a453fce/KakaoTalk_20210131_222352401.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22KakaoTalk_20210131_222352401.jpg%22%3B+filename%2A%3DUTF-8%27%27KakaoTalk_20210131_222352401.jpg" for 172.17.0.1 at 2021-11-27 18:10:53 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"KakaoTalk_20210131_222352401.jpg\"; filename*=UTF-8''KakaoTalk_20210131_222352401.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjMnB2TWxwdFIwVjFVRlJRU25KSWRWVnFka05hY21KWEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnJhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlTMkZyWVc5VVlXeHJYekl3TWpFd01UTXhYekl5TWpNMU1qUXdNUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowdGhhMkZ2VkdGc2ExOHlNREl4TURFek1WOHlNakl6TlRJME1ERXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0xMS0yN1QxODoxNTo1My40MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--6a0460c877c12affd393cfea410f23169a453fce", "filename"=>"KakaoTalk_20210131_222352401"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:10:55 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:3
+  Rendered packs/index.html.erb within layouts/application (4.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 147ms (Views: 145.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:20:33 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.3ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:3
+  Rendered packs/index.html.erb within layouts/application (1.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/packs/..." for 172.17.0.1 at 2021-11-27 18:20:34 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/packs/..."):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:20:57 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:3
+  Rendered packs/index.html.erb within layouts/application (2.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 109.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/..." for 172.17.0.1 at 2021-11-27 18:20:58 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/packs/..."):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/packs/index" for 172.17.0.1 at 2021-11-27 18:24:43 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PacksController#index as HTML
+  Rendering packs/index.html.erb within layouts/application
+  [1m[36mPack Load (0.2ms)[0m  [1m[34mSELECT "packs".* FROM "packs"[0m
+  ↳ app/views/packs/index.html.erb:3
+  Rendered packs/index.html.erb within layouts/application (1.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 110.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/packs/..." for 172.17.0.1 at 2021-11-27 18:24:43 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/packs/..."):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (4.3.10) lib/puma/configuration.rb:228:in `call'
+puma (4.3.10) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.10) lib/puma/server.rb:472:in `process_client'
+puma (4.3.10) lib/puma/server.rb:328:in `block in run'
+puma (4.3.10) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
