@@ -4,5 +4,6 @@ class PacksController < ApplicationController
   end
 
   def show
+	  @pack = Pack.find(params[:id])
   end
 end

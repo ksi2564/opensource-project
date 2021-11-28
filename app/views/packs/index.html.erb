@@ -1,15 +1,15 @@
 <div class="container">
 	<div class="row">
 		<% @packs.each do |pack| %>
-		<div class="col-4">
+		<div class="col-4 mt-4">
 			<div class="card" style="width: 18rem;">
-				<img src="..." class="card-img-top" alt="..." />
-				<div class="card-body">
+				<% if pack.image.attached? %>
+				<img src="<%= url_for(pack.image) %>" class="card-img-top" alt="..." />
+				<% end %>
+				<div class="card-body text-center">
 					<h5 class="card-title"><%= pack.product_name %></h5>
-					<p class="card-text">
-						<%= pack.desc %>
-					</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+					<p class="card-text"><%= pack.desc %></p>
+					<a href="/packs/<%= pack.id %>" class="btn btn-primary">이동</a>
 				</div>
 			</div>
 		</div>

@@ -1,2 +1,25 @@
-<h1>Packs#show</h1>
-<p>Find me in app/views/packs/show.html.erb</p>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Product Detail</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @pack.product_name %></li>
+    </ol>
+  </nav>
+  <div class="row mt-4">
+    <div class="col-6">
+      <% if @pack.image.attached? %>
+        <img src="<%= url_for(@pack.image) %>" class="img-fluid">
+      <% else %>
+        <img src="http://via.placeholder.com/640x360?text=No+Image" alt="" class="img-fluid">
+      <% end %>
+    </div>
+    <div class="col-6">
+      <h2><%= @pack.product_name %></h2>
+      <p><%= @pack.desc %></p>
+      <hr>
+      <h5>안내사항</h5>
+      <p><%= @pack.company_name %></p>
+    </div>
+  </div>
+</div>
