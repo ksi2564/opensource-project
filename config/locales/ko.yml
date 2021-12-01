@@ -3,7 +3,7 @@ ko:
   activerecord:
     models:
       admin_user: 관리자
-      pack: 마스크 팩
+      pack: 신상품
     attributes:
       admin_user:
         email: 관리자 이메일
@@ -13,6 +13,8 @@ ko:
         image: 이미지
         desc: 설명
         company_name: 회사명
+        price: 현재 가격
+        is_publish: 공개 유무
     errors:
       messages:
         record_invalid: 데이터 검증에 실패하였습니다. %{errors}
