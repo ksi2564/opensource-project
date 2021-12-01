@@ -1,6 +1,6 @@
 class PacksController < ApplicationController
   def index
-	  @packs = Pack.all
+	  @packs = Pack.published
   end
 
   def show

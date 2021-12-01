@@ -3,7 +3,9 @@ ko:
   activerecord:
     models:
       admin_user: 관리자
-      pack: 신상품
+      pack: 상품
+      user: 고객
+      cart: 장바구니
     attributes:
       admin_user:
         email: 관리자 이메일

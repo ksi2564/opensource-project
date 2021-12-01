@@ -11,8 +11,20 @@
       <h2><%= @pack.product_name %></h2>
       <p><%= @pack.desc %></p>
       <hr>
-      <h5>안내사항</h5>
-      <p><%= @pack.company_name %></p>
+      <p><%= number_to_currency(@pack.price) %></p>
+	  <hr>
+	  <h3>구매 수량</h3>
+	  <form action="/carts" method="POST">
+		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+		  <input type="hidden" name="pack_id" value="<%= @pack.id %>">
+		  
+		  <div class="form-group">
+			<input type="number" name="quantity" value="1" class="form-control" id="quantity" min="1">  
+		  </div>
+		  
+		  <button type="submit" class="btn btn-outline-dark">장바구니 담기</button>
+		  
+	  </form>
     </div>
   </div>
 </div>
