@@ -8,7 +8,8 @@ gem 'activeadmin'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+gem 'pry-rails'
+gem 'font-awesome-sass', '~> 5.13.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'

@@ -2,12 +2,12 @@
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
 			<% if user_signed_in? %>
-       <a class="nav-item nav-link" href="/users/sign_in"><%= current_user.email %></a>
-        <a class="nav-item nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
-      <% else %>
-        <a class="nav-item nav-link" href="/users/sign_in">로그인</a>
-        <a class="nav-item nav-link" href="/users/sign_up">회원가입</a>
-      <% end %>
+			<a class="nav-item nav-link" href="/users/sign_in"><%= current_user.email %></a>
+			<a class="nav-item nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
+			<% else %>
+			<a class="nav-item nav-link" href="/users/sign_in">로그인</a>
+			<a class="nav-item nav-link" href="/users/sign_up">회원가입</a>
+			<% end %>
 			<a class="nav-link" href="#">고객센터</a>
 		</div>
 	</div>
@@ -32,6 +32,13 @@
 			<a class="nav-link" href="#">베스트</a>
 			<a class="nav-link" href="#">알뜰쇼핑</a>
 			<a class="nav-link" href="#">특가/혜택</a>
+
+			<a class="nav-item nav-link" href="#">
+				<i class="fas fa-map-marker-alt"></i>
+				<a class="nav-item nav-link" href="/carts">
+					<i class="fas fa-shopping-cart"></i>
+				</a>
+			</a>
 		</div>
 	</div>
 </nav>

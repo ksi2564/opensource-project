@@ -1,3 +1,5 @@
+require "open-uri"
+
 class Pack < ApplicationRecord
 	has_one_attached :image
 	
@@ -11,13 +13,18 @@ class Pack < ApplicationRecord
 	has_many :users, through: :carts
 	
 	def self.set_dummy_datas
-	  20.times do
-		Pack.create(
+	  50.times do |i|
+		pack = Pack.new(
 			product_name: Faker::Food.unique.dish,
 			company_name: Faker::Company.unique.name,
 			price: Faker::Commerce.price(range: 5000..50000, as_string: true),
 			desc: Faker::Food.description
 			)
+		
+		sample_image = open("https://loremflickr.com/320/240/food?random=#{i}")
+		  
+		pack.image.attach(io: sample_image, filename: "sample_#{i}.jpg")
+		pack.save
 	    end
 	end
 end
