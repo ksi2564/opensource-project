@@ -2,11 +2,11 @@
 	<div class="row">
 		<% @packs.each do |pack| %>
 		<div class="col-4 mt-4">
-			<div class="card" style="width: 18rem;">
+			<div class="card h-100" style="width: 18rem;">
 				<% if pack.image.attached? %>
 				<img src="<%= url_for(pack.image) %>" class="card-img-top" alt="..." />
 				<% end %>
-				<div class="card-body text-center">
+				<div class="card-body">
 					<h5 class="card-title"><%= pack.product_name %></h5>
 					<p class="card-text"><%= number_to_currency(pack.price) %></p>
 					<p class="card-text"><%= pack.desc %></p>
