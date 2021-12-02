@@ -1,30 +1,41 @@
 <div class="container">
-  <div class="row mt-4">
-    <div class="col-6">
-      <% if @pack.image.attached? %>
-        <img src="<%= url_for(@pack.image) %>" class="img-fluid">
-      <% else %>
-        <img src="http://via.placeholder.com/640x360?text=No+Image" alt="" class="img-fluid">
-      <% end %>
-    </div>
-    <div class="col-6">
-      <h2><%= @pack.product_name %></h2>
-      <p><%= @pack.desc %></p>
-      <hr>
-      <p><%= number_to_currency(@pack.price) %></p>
-	  <hr>
-	  <h3>구매 수량</h3>
-	  <form action="/carts" method="POST">
-		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-		  <input type="hidden" name="pack_id" value="<%= @pack.id %>">
-		  
-		  <div class="form-group">
-			<input type="number" name="quantity" value="1" class="form-control" id="quantity" min="1">  
-		  </div>
-		  
-		  <button type="submit" class="btn btn-outline-dark">장바구니 담기</button>
-		  
-	  </form>
-    </div>
-  </div>
+	<div class="row mt-4">
+		<div class="col-6">
+			<% if @pack.image.attached? %>
+			<img src="<%= url_for(@pack.image) %>" class="img-fluid" />
+			<% else %>
+			<img src="http://via.placeholder.com/640x360?text=No+Image" alt="" class="img-fluid" />
+			<% end %>
+		</div>
+		<div class="col-6">
+			<h2><%= @pack.product_name %></h2>
+			<p><%= @pack.desc %></p>
+			<hr />
+			<p><%= number_to_currency(@pack.price) %></p>
+			<hr />
+			<form action="/carts" method="POST">
+				<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+				<input type="hidden" name="pack_id" value="<%= @pack.id %>" />
+
+				<div class="form-group">
+					<label for="quantity">구매 수량</label>
+					<input
+						type="number"
+						name="quantity"
+						value="1"
+						class="form-control mt-2"
+						id="quantity"
+						min="1"
+					/>
+				</div>
+				<button type="submit" class="btn btn-outline-dark mt-2">장바구니 담기</button>
+			</form>
+		</div>
+	</div>
 </div>
+
+<script>
+	<% if flash[:notice].present? %>
+	  confirm("<%= flash[:notice] %>")
+	<% end %>
+</script>

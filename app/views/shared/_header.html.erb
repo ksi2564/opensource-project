@@ -2,13 +2,17 @@
 	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 		<div class="navbar-nav">
 			<% if user_signed_in? %>
-			<a class="nav-item nav-link" href="/users/sign_in"><%= current_user.email %></a>
-			<a class="nav-item nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
+			<a class="nav-item nav-link" href="/users/sign_in"
+				><small><%= current_user.email %></small></a
+			>
+			<a class="nav-item nav-link" href="/users/sign_out" data-method="delete"
+				><small>로그아웃</small></a
+			>
 			<% else %>
-			<a class="nav-item nav-link" href="/users/sign_in">로그인</a>
-			<a class="nav-item nav-link" href="/users/sign_up">회원가입</a>
+			<a class="nav-item nav-link" href="/users/sign_in"><small>로그인</small></a>
+			<a class="nav-item nav-link" href="/users/sign_up"><small>회원가입</small></a>
 			<% end %>
-			<a class="nav-link" href="#">고객센터</a>
+			<a class="nav-link" href="#"><small>고객센터</small></a>
 		</div>
 	</div>
 </nav>

@@ -14,32 +14,27 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% @carts.each do |cart| %>
 						<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-							<td>Otto</td>
-							<td>@mdo</td>
+							<th scope="row">
+								<% if cart.pack.image.attached? %>
+								<img src="<%= url_for(cart.pack.image) %>" class="img-fluid" />
+								<% end %>
+							</th>
+							<td><%= cart.pack.product_name %></td>
+							<td><%= cart.quantity %>개</td>
+							<td><%= number_to_currency(cart.pack.price * cart.quantity) %></td>
 							<td>
-								<a href="#"><i class="fas fa-times"></i></a>
+								<a
+									href="/carts/<%= cart.id %>"
+									class="ml-3"
+									data-method="delete"
+									data-confirm="삭제하시겠습니까?"
+									><i class="fas fa-times"></i
+								></a>
 							</td>
 						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Jacob</td>
-							<td>Thornton</td>
-							<td>@fat</td>
-							<td>
-								<a href="#"><i class="fas fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td colspan="2">Larry the Bird</td>
-							<td>@twitter</td>
-							<td>
-								<a href="#"><i class="fas fa-times"></i></a>
-							</td>
-						</tr>
+						<% end %>
 					</tbody>
 				</table>
 			</div>
