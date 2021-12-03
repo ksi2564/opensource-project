@@ -16,7 +16,6 @@
 			<form action="/carts" method="POST">
 				<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 				<input type="hidden" name="pack_id" value="<%= @pack.id %>" />
-
 				<div class="form-group">
 					<label for="quantity">구매 수량</label>
 					<input

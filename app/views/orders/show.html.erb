@@ -1,0 +1,139 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 mt-4 text-center">
+			<h3>주문서</h3>
+		</div>
+		<div class="col-12">
+			<div class="mt-4">
+				<h5>주문상품</h5>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col" style="width: 10%;"></th>
+							<th scope="col" style="width: 60%;"></th>
+							<th scope="col" style="width: 15%;"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @order.order_items.each do |item| %>
+						<tr>
+							<th scope="row">
+								<% if item.pack.image.attached? %>
+								<img src="<%= url_for(item.pack.image) %>" class="img-fluid" />
+								<% end %>
+							</th>
+							<td><%= item.pack.product_name %></td>
+							<td><%= item.quantity %>개</td>
+							<td><%= number_to_currency(item.pack.price * item.quantity) %></td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<div class="mt-4">
+				<h5>주문자 정보</h5>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col" style="width: 30%;"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								보내는 분
+							</th>
+							<td>김성인</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								휴대폰
+							</th>
+							<td>01012345678</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								이메일
+							</th>
+							<td>ksi2564@naver.com</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<div class="col-12">
+			<h5>
+				배송 정보
+			</h5>
+			<form action="">
+				<div class="mb-3">
+					<label for="" class="form-label">받으실 분</label>
+					<input
+						type="text"
+						class="form-control"
+						id="name"
+						placeholder="이름을 입력해주세요"
+					/>
+				</div>
+				<div class="mb-3">
+					<label for="" class="form-label">휴대폰</label>
+					<input
+						type="text"
+						class="form-control"
+						id="phone"
+						placeholder="숫자만 입력해주세요"
+					/>
+				</div>
+				<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+				<div class="mb-3">
+					<label for="" class="d-block">배송지</label>
+					<a href="#" class="btn btn-outline-dark" id="search_address_btn">주소검색</a>
+					<input
+						type="text"
+						class="form-control mt-2"
+						id="address_1"
+						placeholder="도로명주소"
+					/>
+					<input
+						type="text"
+						class="form-control mt-2"
+						id="address_2"
+						placeholder="나머지 주소를 입력해주세요"
+					/>
+				</div>
+				<div class="mb-3">
+					<label for="" class="form-label">배송기사 요청사항</label>
+					<input
+						type="text"
+						class="form-control"
+						id="request"
+						placeholder="예: 벨 누르지 말고 전화주세요."
+					/>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	$('#search_address_btn').on('click', function (e) {
+		e.preventDefault();
+		postCodePopup();
+	});
+
+	function postCodePopup() {
+		new daum.Postcode({
+			oncomplete: function (data) {
+				$('#address_1').val(data.roadAddress);
+				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+				// 예제를 참고하여 다양한 활용법을 확인해 보세요.
+			},
+		}).open();
+	}
+</script>

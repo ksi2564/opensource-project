@@ -7,7 +7,7 @@
 					<thead>
 						<tr>
 							<th scope="col" style="width: 10%;"></th>
-							<th scope="col" style="width: 30%;"></th>
+							<th scope="col" style="width: 50%;"></th>
 							<th scope="col"></th>
 							<th scope="col"></th>
 							<th scope="col" style="width: 20px;"></th>
@@ -39,18 +39,20 @@
 				</table>
 			</div>
 		</div>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<div class="card border-light mt-5" style="max-width: 18rem;">
 			<div class="card-body">
 				<h6 class="card-title"><i class="fas fa-map-marker-alt"></i> 배송지</h6>
-				<p class="card-text">
-					Some quick example text to build on the card title and make up the bulk of the
-					card's content.
+				<p class="card-text" id="address_1" name="address_1">
+					부산 부산진구 엄광로 176 (동의대학교) 지천관 601호
 				</p>
 				<div class="d-grid gap-2 col-12 mx-auto">
-					<a href="#" class="btn btn-primary btn-sm">배송지 변경</a>
+					<button type="button" class="btn btn-outline-dark btn-sm" id="search_address_btn_1"
+						>배송지 변경</button>
 				</div>
 			</div>
 
+			<hr />
 			<div class="row">
 				<div class="col-12">
 					<div class="card">
@@ -76,11 +78,42 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-grid gap-2 col-12 mx-auto">
-					<a href="#" class="btn btn-primary btn-lg">주문하기</a>
+				<% if @carts.present? %>
+				<div class="d-grid gap-2 col-12 mx-auto mt-2">
+					<form action="/orders" method="POST">
+						<%= hidden_field_tag :authenticity_token, form_authenticity_token %> <%
+						@carts.each do |cart| %>
+						<input type="hidden" name="cart_id[]" value="<%= cart.id %>" />
+						<% end %>
+						<button type="submit" class="btn btn-primary btn-lg col-12">
+							주문하기
+						</button>
+					</form>
 				</div>
+				<% else %>
+				<div class="d-grid gap-2 col-12 mx-auto mt-2">
+					<button type="submit" class="btn btn-secondary btn-lg col-12" disabled>
+						상품을 담아주세요
+					</button>
+				</div>
+				<% end %>
 			</div>
-			<hr />
 		</div>
 	</div>
 </div>
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	$('#search_address_btn_1').on('click', function (e) {
+		e.preventDefault();
+		postCodePopup();
+	});
+	function postCodePopup(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+        }
+    }).open();
+	}
+</script>
