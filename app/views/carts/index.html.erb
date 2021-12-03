@@ -1,12 +1,12 @@
 <div class="container">
 	<div class="row">
-		<div class="col-12">
+		<div class="col-6" style="width: 70%;">
 			<div class="mt-4">
-				<h2>장바구니</h2>
+				<h5>장바구니</h5>
 				<table class="table">
 					<thead>
 						<tr>
-							<th scope="col"></th>
+							<th scope="col" style="width: 10%;"></th>
 							<th scope="col" style="width: 30%;"></th>
 							<th scope="col"></th>
 							<th scope="col"></th>
@@ -38,6 +38,49 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
+		<div class="card border-light mt-5" style="max-width: 18rem;">
+			<div class="card-body">
+				<h6 class="card-title"><i class="fas fa-map-marker-alt"></i> 배송지</h6>
+				<p class="card-text">
+					Some quick example text to build on the card title and make up the bulk of the
+					card's content.
+				</p>
+				<div class="d-grid gap-2 col-12 mx-auto">
+					<a href="#" class="btn btn-primary btn-sm">배송지 변경</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="d-flex justify-content-between">
+								<p class="card-text">상품금액</p>
+								<p class="card-text"><%= number_to_currency(@products_price) %></p>
+							</div>
+							<div class="d-flex justify-content-between">
+								<p class="card-text">상품할인금액</p>
+								<p class="card-text">0원</p>
+							</div>
+							<div class="d-flex justify-content-between">
+								<p class="card-text">배송비</p>
+								<p class="card-text"><%= number_to_currency(@shipping_fee) %></p>
+							</div>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-between">
+								<p class="card-text">결제예정금액</p>
+								<p class="card-text"><%= number_to_currency(@total_price) %></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-grid gap-2 col-12 mx-auto">
+					<a href="#" class="btn btn-primary btn-lg">주문하기</a>
+				</div>
+			</div>
+			<hr />
 		</div>
 	</div>
 </div>
