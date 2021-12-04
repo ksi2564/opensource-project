@@ -25,17 +25,7 @@ class CartsController < ApplicationController
 	  quantity: params[:quantity]
 	)
 	  
-	sample_carts = current_user.carts
-	  
-	# 기존에 장바구니에 상품이 있는지 확인하는 과정
-	remain_cart = sample_carts.find_by(pack_id: params[:pack_id])
-	  
-	if remain_cart.present?
-		sum_quantity = remain_cart.quantity + params[:quantity].to_i
-		remain_cart.update(quantity: sum_quantity)
-	else
-		cart.save
-	end
+	cart.verified_save
 	  
     flash[:notice] = "장바구니에 상품을 담았습니다."
 	  

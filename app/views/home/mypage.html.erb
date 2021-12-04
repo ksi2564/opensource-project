@@ -1,0 +1,139 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="card-group">
+			<div class="card" style="width: 30rem;">
+				<div class="card-body">
+					<h5 class="nav-link text-dark">(웰컴) 김성인님</h5>
+					<p class="nav-link text-dark">
+						적립 5%
+					</p>
+					<p class="nav-link text-dark">
+						최초 1회 무료배송
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5>
+						<a href="#" class="nav-link text-dark">적립금</a>
+					</h5>
+					<p class="nav-link text-dark">
+						9000원
+					</p>
+					<p class="nav-link text-dark">
+						<small class="text-muted">소멸 예정 9000원</small>
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5>
+						<a href="#" class="nav-link text-dark">쿠폰</a>
+					</h5>
+					<p class="nav-link text-dark">
+						0개
+					</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="nav-link text-dark">컬리퍼플 박스</h5>
+					<a class="nav-link text-dark" href="#">
+						알아보기
+					</a>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="nav-link text-dark">컬리 패스</h5>
+					<a class="nav-link text-dark" href="#">
+						알아보기
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row mt-5">
+	<div class="col-3">
+		<ul class="nav flex-column ml-3">
+			<li class="nav-item">
+				<h5>
+					<a class="nav-link text-dark" href="#">마이컬리</a>
+				</h5>
+			</li>
+			<li class="nav-item">
+				<ul class="nav flex-column ml-3">
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">주문 내역</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">선물 내역</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">배송지 관리</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">상품 후기</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">상품 문의</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">적립금</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">쿠폰</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link text-dark">개인정보 수정</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="col-8">
+		<div class="row">
+			<div class="col-6">
+				<div class="card mx-5 shadow-sm">
+					<div class="card-body text-center">
+						<div class="d-flex justify-content-around">
+							<div>
+								<h3>김성인</h3>
+								<a
+									href="/users/edit"
+									class="btn btn-warning btn-sm px-4 d-block mb-1 shadow"
+									>수정</a
+								>
+								<a href="#" class="btn btn-warning btn-sm px-4 d-block shadow"
+									>쿠폰 0개</a
+								>
+							</div>
+							<div>
+								<p><%= @user.email %></p>
+								<span class="badge badge-info px-4 text-dark">웰컴</span>
+								<a
+									href="/users/sign_out"
+									class="btn btn-dark btn-sm px-4 d-block shadow mt-3"
+									data-method="delete"
+									>로그아웃</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="card mx-5 shadow-sm">
+					<div class="card-body">
+						<h5 class="card-title">주문/배송조회</h5>
+						<p class="card-text">
+							총 <%= @user.orders.count %>건의 주문 내역이 있습니다
+						</p>
+						<a href="#" class="btn btn-warning px-5 shadow">내역 조회</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

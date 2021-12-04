@@ -23,7 +23,7 @@
 							</th>
 							<td><%= cart.pack.product_name %></td>
 							<td><%= cart.quantity %>개</td>
-							<td><%= number_to_currency(cart.pack.price * cart.quantity) %></td>
+							<td><%= object_to_currency(cart) %></td>
 							<td>
 								<a
 									href="/carts/<%= cart.id %>"

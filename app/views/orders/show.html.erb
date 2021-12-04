@@ -25,7 +25,7 @@
 							</th>
 							<td><%= item.pack.product_name %></td>
 							<td><%= item.quantity %>개</td>
-							<td><%= number_to_currency(item.pack.price * item.quantity) %></td>
+							<td><%= object_to_currency(item) %></td>
 						</tr>
 						<% end %>
 					</tbody>
