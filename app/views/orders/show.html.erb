@@ -70,7 +70,13 @@
 			<h5>
 				배송 정보
 			</h5>
-			<form action="">
+			<form action="/orders/<%= @order.id %>/payments" method="POST" id="payment_form">
+				<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+				<input type="hidden" name="imp_uid" id="imp_uid" />
+				<input type="hidden" name="merchant_uid" id="merchant_uid" />
+				<input type="hidden" name="paid_amount" id="paid_amount" />
+				<input type="hidden" name="error_msg" id="error_msg" />
+
 				<div class="mb-3">
 					<label for="" class="form-label">받으실 분</label>
 					<input
@@ -89,7 +95,7 @@
 						placeholder="숫자만 입력해주세요"
 					/>
 				</div>
-				<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 				<div class="mb-3">
 					<label for="" class="d-block">배송지</label>
 					<a href="#" class="btn btn-outline-dark" id="search_address_btn">주소검색</a>
@@ -118,22 +124,129 @@
 			</form>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-12 mt-3">
+			<h5>결제 금액</h5>
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex justify-content-between">
+						<p class="card-text">주문금액</p>
+						<p class="card-text"><%= number_to_currency(@order.product_price) %></p>
+					</div>
+					<div class="d-flex justify-content-between">
+						<p class="card-text">주문할인금액</p>
+						<p class="card-text">0원</p>
+					</div>
+					<div class="d-flex justify-content-between">
+						<p class="card-text">배송비</p>
+						<p class="card-text"><%= number_to_currency(@order.shipping_fee) %></p>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div class="d-flex justify-content-between">
+						<p class="card-text">최종결제금액</p>
+						<p class="card-text"><%= number_to_currency(@order.total_price) %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="d-grid col-3 mx-auto my-4">
+			<a href="#" class="btn btn-primary" id="payment_btn">
+				<%= number_to_currency(@order.total_price) %> 결제하기
+			</a>
+		</div>
+	</div>
 </div>
 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-	$('#search_address_btn').on('click', function (e) {
-		e.preventDefault();
-		postCodePopup();
-	});
+	$(function () {
+		var IMP = window.IMP; // 생략 가능
+		IMP.init('imp29308286'); // 예: imp00000000
 
-	function postCodePopup() {
-		new daum.Postcode({
-			oncomplete: function (data) {
-				$('#address_1').val(data.roadAddress);
-				// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-				// 예제를 참고하여 다양한 활용법을 확인해 보세요.
-			},
-		}).open();
-	}
+		function requestPay() {
+			IMP.request_pay(
+				{
+					// param
+					pg: 'html5_inicis',
+					pay_method: 'card',
+					merchant_uid: 'merchant_' + new Date().getTime(),
+					name: '마켓컬리',
+					amount: <%= Rails.env.development? ? 100 : @order.total_price %>,
+					buyer_email: $("#email").val(),
+					buyer_name: $("#name").val(),
+					buyer_tel: $("#phone").val(),
+					buyer_addr: $("#address_1").val() + $("#address_2").val(),
+					buyer_postcode: $("#post_code").val(),
+				},
+				function (rsp) {
+					if (rsp.success) {
+						$("#imp_uid").val(rsp.imp_uid)
+						$("#merchant_uid").val(rsp.merchant_uid)
+						$("#payment_form").submit();
+					} else {
+						// var msg = '결제에 실패하였습니다.';
+						// msg += '에러내용 : ' + rsp.error_msg;
+						$("#error_msg").val(rsp.error_msg)
+					}
+				}
+			);
+		}
+
+	   function check_form(){
+	     is_name = $("#name").val() == ""
+	     is_phone = $("#phone").val() == ""
+	     is_address_1 = $("#address_1").val() == ""
+	     is_address_2 = $("#address_2").val() == ""
+
+	     msg = ""
+	     if(is_name){
+	       msg += "받으실 분을 입력하세요.\n "
+	     }
+
+	     if(is_phone){
+	       msg += "휴대폰 번호를 입력하세요.\n"
+	     }
+
+	     if(is_address_1 || is_address_2){
+	       msg += "배송지를 입력하세요.\n"
+	     }
+
+	     return {
+	       status: msg == "",
+	       msg: msg
+	     }
+	   }
+
+		$("#payment_btn").on('click', function(e){
+			e.preventDefault();
+			checked_data = check_form();
+			if (checked_data.status){
+				requestPay();
+			}
+			else {
+				alert(checked_data.msg);
+			}
+		})
+
+		$('#search_address_btn').on('click', function (e) {
+			e.preventDefault();
+			postCodePopup();
+		})
+
+		function postCodePopup() {
+			new daum.Postcode({
+				oncomplete: function (data) {
+					$('#address_1').val(data.roadAddress);
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+					// 예제를 참고하여 다양한 활용법을 확인해 보세요.
+				}
+			}).open();
+		}
+	})
 </script>

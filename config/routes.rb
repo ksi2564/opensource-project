@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'orders/create'
-  get 'orders/show'
-  get 'carts/create'
- 
+  # get 'orders/create'
+  # get 'orders/show'
+  # get 'carts/create'
+	
   get "mypage" => "home#mypage"
 	
   devise_for :users
@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 	
   resources :carts, only: [:create, :index, :destroy]
 	
-  resources :orders, only: [:create, :show]
+  resources :orders, only: [:create, :show, :index] do
+  	resources :payments, only: [:create]
+  end
+	
+  
 
   # get 'packs/index'
   # get 'packs/show/:id' => "packs#show"

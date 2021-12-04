@@ -7,8 +7,10 @@
 		'data-turbolinks-track': 'reload' %>
 	</head>
 	<body>
-		<%= render "shared/header" %>
-		<%= yield %>
-		<%= any_login_here if defined?(AnyLogin) %>
+		<%= render "shared/header" %> <%= yield %> <%= any_login_here if defined?(AnyLogin) %>
+		<script
+			type="text/javascript"
+			src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+		></script>
 	</body>
 </html>

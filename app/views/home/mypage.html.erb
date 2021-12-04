@@ -65,7 +65,7 @@
 			<li class="nav-item">
 				<ul class="nav flex-column ml-3">
 					<li class="nav-item">
-						<a href="#" class="nav-link text-dark">주문 내역</a>
+						<a href="/orders" class="nav-link text-dark">주문 내역</a>
 					</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link text-dark">선물 내역</a>
@@ -91,49 +91,5 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
-	<div class="col-8">
-		<div class="row">
-			<div class="col-6">
-				<div class="card mx-5 shadow-sm">
-					<div class="card-body text-center">
-						<div class="d-flex justify-content-around">
-							<div>
-								<h3>김성인</h3>
-								<a
-									href="/users/edit"
-									class="btn btn-warning btn-sm px-4 d-block mb-1 shadow"
-									>수정</a
-								>
-								<a href="#" class="btn btn-warning btn-sm px-4 d-block shadow"
-									>쿠폰 0개</a
-								>
-							</div>
-							<div>
-								<p><%= @user.email %></p>
-								<span class="badge badge-info px-4 text-dark">웰컴</span>
-								<a
-									href="/users/sign_out"
-									class="btn btn-dark btn-sm px-4 d-block shadow mt-3"
-									data-method="delete"
-									>로그아웃</a
-								>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-6">
-				<div class="card mx-5 shadow-sm">
-					<div class="card-body">
-						<h5 class="card-title">주문/배송조회</h5>
-						<p class="card-text">
-							총 <%= @user.orders.count %>건의 주문 내역이 있습니다
-						</p>
-						<a href="#" class="btn btn-warning px-5 shadow">내역 조회</a>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
