@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_093843) do
+ActiveRecord::Schema.define(version: 2021_12_05_070110) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_093843) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "cancel_reason"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

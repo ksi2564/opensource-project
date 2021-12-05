@@ -12,6 +12,8 @@ gem 'pry-rails'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'any_login'
 
+gem 'arctic_admin'
+
 gem 'httparty'
 gem 'iamport'
 

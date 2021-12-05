@@ -10,22 +10,26 @@
 					<thead>
 						<tr>
 							<th scope="col" style="width: 10%;"></th>
-							<th scope="col" style="width: 60%;"></th>
-							<th scope="col" style="width: 15%;"></th>
-							<th scope="col"></th>
+							<th scope="col" style="width: 10%;"></th>
+							<th scope="col" style="width: 50%;"></th>
+							<th scope="col" style="width: 20%;"></th>
 						</tr>
 					</thead>
 					<tbody>
 						<% @orders.each do |order| %>
 						<tr>
-							<% if order.completed? | order.processed? %>
+							<% if order.completed? | order.processed?%>
 							<td><%= order.created_at.strftime("%F") %></td>
 							<td><%= order.name %></td>
 							<td><%= order.address %></td>
-							<td><span class="badge badge-warning"><%= order.status %></span></td>
+							<td><span class="badge text-dark">주문완료</span></td>
 							<td><a href="#" class="btn btn-primary">후기쓰기</a></td>
-							<% else %>
-							
+							<% elsif order.cancelled?%>
+							<td><%= order.created_at.strftime("%F") %></td>
+							<td><%= order.name %></td>
+							<td><%= order.address %></td>
+							<td><span class="badge text-dark">주문 취소</span></td>
+							<td></td>
 							<% end %>
 						</tr>
 						<% end %>
@@ -35,9 +39,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	 <% if flash[:notice].present? %>
-		alert("<%= flash[:notice] %>")
-	 <% end %>
-</script>
