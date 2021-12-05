@@ -6,7 +6,7 @@ class Order < ApplicationRecord
 	
   has_one :payment, dependent: :nullify
 	
-  enum status: [:before_payment, :processed, :completed, :failed]
+  enum status: [:before_payment, :processed, :completed, :failed, :cancelled]
 	
     def product_price
 	  result = 0

@@ -6,6 +6,7 @@ ko:
       pack: 상품
       user: 고객
       cart: 장바구니
+      order: 주문
     attributes:
       admin_user:
         email: 관리자 이메일
