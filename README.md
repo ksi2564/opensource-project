@@ -1,6 +1,6 @@
 # README
 
-## 마켓컬리 클론 코딩을 진행하였음.
+## 마켓컬리 클론 코딩 프로젝트
 ### 사용한 것
 - ruby on rails
 - bootstrap
