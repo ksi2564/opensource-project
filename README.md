@@ -16,6 +16,9 @@
   + 환불 기능까지 구현
  ...
 ---
+### Service Flow
+![image](https://user-images.githubusercontent.com/90057208/169698309-1faac486-6ed4-465d-bb66-a105dfe56434.png)
+---
 ### ERD
 ![image](https://user-images.githubusercontent.com/90057208/169697918-40ac8f84-282b-479a-a1a6-901cacfa1b34.png)
 ---
